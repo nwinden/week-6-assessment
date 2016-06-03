@@ -1,0 +1,20 @@
+<section ng-init="getHeros()">
+
+  <h2>Listing of Heros from the Hero Tracker Database</h2>
+
+  <label ng-init="getPowers()" for="filter">Filter Heros:</label>
+  <select name="filter" ng-model="filterBy">
+    <option value="">None</option>
+    <option ng-repeat="power in powers" value={{power.power_name}}>{{power.power_name}}</option>
+  </select>
+
+  <div ng-repeat="hero in heros | filter: filterBy">
+    <p>Alias: {{hero.alias}}</p>
+    <p>First Name: {{hero.first_name}}</p>
+    <p>Last Name: {{hero.last_name}}</p>
+    <p>City: {{hero.city}}</p>
+    <p>Super Power: {{hero.power_name}}</p>
+    <button type="button" ng-click="deleteHero(hero._id)">Delete</button>
+  </div>
+
+</section>

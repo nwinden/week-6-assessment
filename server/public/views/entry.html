@@ -1,0 +1,27 @@
+<section ng-init="getPowers()">
+
+  <h2>Submit A hero Into the Hero Tracker Database</h2>
+
+  <form ng-submit="submitHero()">
+
+    <label for="alias">Alias:</label>
+    <input type="text" name="alias" ng-model="hero.alias">
+
+    <label for="fName">First Name:</label>
+    <input type="text" name="fName" ng-model="hero.first_name">
+
+    <label for="lName">Last Name:</label>
+    <input type="text" name="lName" ng-model="hero.last_name">
+
+    <label for="city">City:</label>
+    <input type="text" name="city" ng-model="hero.city">
+
+    <label for="power">Choose A Power:</label>
+    <select class="" name="power" ng-model="hero.power_name">
+      <option ng-repeat="power in powers" value={{power.power_name}}>{{power.power_name}}</option>
+    </select>
+
+    <button type="submit">Submit Hero</button>
+
+  </form>
+</section>
